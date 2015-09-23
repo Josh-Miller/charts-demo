@@ -10,9 +10,13 @@
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 <div>
+<strong>Line type</strong>
 <input type="radio" name="mychart" class="mychart" id= "spline" value="spline" onclick= "chartfunc()">Spline
 <input type="radio" name="mychart" class="mychart" id= "line" value="line" onclick= "chartfunc()">Line
-
+<input type="radio" name="mychart" class="mychart" id= "areaspline" value="areaspline" onclick= "chartfunc()">areaspline
+<br />
+<br />
+<strong>Line style</strong>
 <input type="radio" name="mychart" class="mychart" id= "solid" value="solid" onclick= "linestylefunc()">Solid
 <input type="radio" name="mychart" class="mychart" id= "dash" value="dash" onclick= "linestylefunc()">Dashed
 
@@ -164,6 +168,10 @@ chartfunc = function() {
   if(spline.checked) {
     options.chart.renderTo = 'container';
     options.chart.type = 'spline';
+    var chart1 = new Highcharts.Chart(options);
+  } else if (areaspline.checked) {
+    options.chart.renderTo = 'container';
+    options.chart.type = 'areaspline';
     var chart1 = new Highcharts.Chart(options);
   } else {
     options.chart.renderTo = 'container';
